@@ -21,6 +21,7 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,7 @@ try {
             border-collapse: collapse;
             font-family: sans-serif;
             font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .table-zebra caption {
@@ -47,11 +48,12 @@ try {
         }
 
         .table-zebra thead {
-            background-color: #2c3e50; /* A dark blue-grey header */
+            background-color: #2c3e50;
+            /* A dark blue-grey header */
             color: #ffffff;
         }
 
-        .table-zebra th, 
+        .table-zebra th,
         .table-zebra td {
             padding: 12px 15px;
             text-align: left;
@@ -74,9 +76,10 @@ try {
         }
     </style>
 </head>
+
 <body>
     <div class="table-container">
-    <table class="table-zebra">
+        <table class="table-zebra">
             <caption>List of Active Users as of Today</caption>
             <thead>
                 <tr>
@@ -99,4 +102,5 @@ try {
         </table>
     </div>
 </body>
+
 </html>
