@@ -57,7 +57,7 @@
         <div class="container">
             <form>
                 <div class="mb-3">
-                    <label for="inputProductName" class="form-label">Product Name</label>
+                    <label for="inputProductName" class="form-label">Name Produk</label>
                     <input type="text" class="form-control" id="inputProductName" aria-describedby="nameHelp">
                 </div>
                 <div class="mb-3">
