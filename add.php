@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -17,14 +13,14 @@
         <!-- Content here -->
         <nav class="navbar navbar-expand-lg bg-primary text-light">
             <div class="container-fluid text-white">
-                <a class="navbar-brand text-white" href="#">Navbar</a>
+                <a class="navbar-brand text-white" href="index.php">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  text-white" href="#">Link</a>
@@ -54,19 +50,19 @@
             </div>
         </nav>
 
-        <div class="container">
-            <form>
+        <div class="container mt-3">
+            <form method="POST" action="process_add.php">
                 <div class="mb-3">
-                    <label for="inputProductName" class="form-label">Name Produk</label>
-                    <input type="text" class="form-control" id="inputProductName" aria-describedby="nameHelp">
+                    <label for="inputProductName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="inputProductName" name="name_product" aria-describedby="nameHelp">
                 </div>
                 <div class="mb-3">
                     <label for="inputPrice" class="form-label">Price</label>
-                    <input type="number" class="form-control" id="inputPrice">
+                    <input type="number" class="form-control" id="inputPrice" name="price">
                 </div>
                 <div class="mb-3">
                     <label for="inputQuantity" class="form-label">Quantity</label>
-                    <input type="number" class="form-control" id="inputQuantity">
+                    <input type="number" class="form-control" id="inputQuantity" name="quantity">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
