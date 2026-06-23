@@ -28,14 +28,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 30px;
-        }
-
         .table-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -47,6 +41,7 @@ try {
         }
 
         .header-container {
+            margin-top: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -143,6 +138,12 @@ try {
             color: white;
         }
 
+        .btn-kurang {
+            background-color: #f7f201ff;
+            color: black;
+            font-weight: bold;
+        }
+
         .btn-delete:hover {
             background-color: #c0392b;
         }
@@ -150,7 +151,30 @@ try {
 </head>
 
 <body>
-    <div class="table-container">
+    <div class="container-xxl">
+        <nav class="navbar navbar-expand-lg bg-primary text-light">
+            <div class="container-fluid text-white">
+                <a class="navbar-brand text-white" href="index.php">GUDANG PRODUK</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="add.php">Add Produk</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-warning  text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
         <div class="header-container">
             <h2>Product Catalog</h2>
             <a href="add.php" class="btn-add">+ Add Product</a>
@@ -172,16 +196,23 @@ try {
                         <td><?php echo $product['ID']; ?></td>
                         <td><?php echo $product['name']; ?></td>
                         <td><?php echo $product['price']; ?></td>
-                        <td><?php echo $product['quantity']; ?></td>
+                        <td>
+                            <a href="update_stock.php?id=<?php echo $product['ID']; ?>" class="btn-stock btn-minus"></a>
+                            <span class="stock-value"><?php echo $product['quantity']; ?></span>
+                            <a href="update_stock.php?id=<?php echo $product['ID']; ?>" class="btn-stock btn-plus"></a>
+                        </td>
                         <td>
                             <a href="edit.php?id=<?php echo $product['ID']; ?>" class="btn-action btn-edit">Edit</a>
                             <a href="delete.php?id=<?php echo $product['ID']; ?>" class="btn-action btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?');">Delete</a>
+                            <a href="process_kurang.php?id=<?php echo $product['ID']; ?>" class="btn-action btn-kurang"> - </a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
